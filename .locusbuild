@@ -13,7 +13,7 @@
       "path": "client",
       "port": 8080,
       "healthCheck": "/",
-      "startCommand": "npm run preview -- --host 0.0.0.0 --port 8080",
+      "startCommand": "npm run dev -- --host 0.0.0.0 --port 8080",
       "env": {
         "VITE_API_BASE_URL": "${{backend.URL}}/api"
       }

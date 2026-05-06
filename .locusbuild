@@ -1,0 +1,16 @@
+{
+  "services": {
+    "backend": {
+      "path": "server",
+      "port": 8080,
+      "healthCheck": "/api/health",
+      "startCommand": "npm start"
+    },
+    "frontend": {
+      "path": "client",
+      "port": 8080,
+      "healthCheck": "/",
+      "startCommand": "npm run preview -- --host 0.0.0.0 --port 8080"
+    }
+  }
+}

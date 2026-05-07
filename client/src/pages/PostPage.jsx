@@ -110,15 +110,13 @@ const PostPage = () => {
           <div>
             <div className="post-content" onMouseUp={handleTextSelect}>
               {post.paragraphs?.map((para) => (
-                <div key={para.index} data-index={para.index}>
-                  <ParagraphRenderer paragraph={para} postId={id} reactions={reactions[para.index] || []} heatLevel={Math.min(Math.ceil((heatmap[para.index] || 0) / 3), 5)} />
-                </div>
+                <ParagraphRenderer key={para.index} paragraph={para} postId={id} reactions={reactions[para.index] || []} heatLevel={Math.min(Math.ceil((heatmap[para.index] || 0) / 3), 5)} />
               ))}
             </div>
             <ConsensusMeter postId={id} />
             <CommentSection postId={id} comments={comments} onRefresh={loadData} />
           </div>
-          <ClaimSidebar postId={id} claims={claims} onRefresh={loadData} />
+          <ClaimSidebar postId={id} claims={claims} onRefresh={loadData} authorId={post.authorId?._id} isAdmin={user?.role === 'admin'} />
         </div>
       </div>
     </div>

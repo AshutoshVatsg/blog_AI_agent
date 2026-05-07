@@ -36,7 +36,7 @@ const ParagraphRenderer = ({ paragraph, postId, reactions = [], heatLevel = 0 })
   localReactions.forEach(r => { emojiCounts[r.emoji] = (emojiCounts[r.emoji] || 0) + 1; });
 
   return (
-    <div className={`paragraph-block ${typeClass} ${heatClass}`}>
+    <div className={`paragraph-block ${typeClass} ${heatClass}`} data-index={paragraph.index}>
       <div dangerouslySetInnerHTML={{ __html: paragraph.content }} />
       <div className="emoji-bar">
         {EMOJIS.map(emoji => (
